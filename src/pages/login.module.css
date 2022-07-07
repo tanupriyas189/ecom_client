@@ -1,0 +1,44 @@
+.page {
+  padding: 50px;
+  height: 100vh;
+}
+.title {
+  padding-bottom: 20px;
+}
+.form {
+  min-height: 90%;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+input {
+  background-color: transparent;
+  width: 100%;
+  margin-bottom: 20px;
+  outline-style: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+button {
+  padding: 5px 10px;
+  width: 100%;
+  background-color: #363062;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 300;
+  display: flex;
+  text-align: left;
+  margin-bottom: 2px;
+  width: 100%;
+  font-size: 15px;
+}
