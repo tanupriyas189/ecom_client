@@ -1,9 +1,25 @@
 import React, { useState } from "react";
+import { login } from "../utils/api";
 import styles from "./login.module.css";
+import toast from "react-hot-toast";
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const onLoad = (res) => {
+    console.log(res);
+    toast.success("Successfully logged in!");
+  };
+
+  const onSubmit = () => {
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    login(data, onLoad);
+  };
 
   return (
     <div className={styles.page}>
@@ -18,7 +34,6 @@ function Login() {
           value={email}
           className={styles.email}
           type="text"
-          placeholder="Email"
         />
         <h3>Email</h3>
         <input
@@ -26,12 +41,8 @@ function Login() {
           value={password}
           className={styles.password}
           type="password"
-          placeholder="Password"
         />
-        <button
-          onClick={() => console.log(email, " ", password)}
-          className={styles.button}
-        >
+        <button onClick={() => onSubmit()} className={styles.button}>
           Login
         </button>
       </div>
